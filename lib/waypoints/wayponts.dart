@@ -5,7 +5,6 @@ class Waypoint implements Comparable<Waypoint> {
 
   Waypoint({required this.name, required this.posX, required this.posY});
 
-<<<<<<< HEAD
   @override
   int compareTo(Waypoint other) {
     // Compare waypoints based on their names
@@ -13,7 +12,7 @@ class Waypoint implements Comparable<Waypoint> {
     // If you want to compare based on other criteria, adjust the logic here
   }
 }
-=======
+
 final List<Waypoint> waypoints = [
   gwt1,
   n109c,
@@ -152,4 +151,3 @@ final stairML1 = Waypoint(name: 'STAIR_ML1', posX: 62, posY: 250);
 final stairMR1 = Waypoint(name: 'STAIR_MR1', posX: 290, posY: 260);
 final stairLL1 = Waypoint(name: 'STAIR_LL1', posX: 160, posY: 375);
 final stairLR1 = Waypoint(name: 'STAIR_LR1', posX: 250, posY: 374);
->>>>>>> adw
