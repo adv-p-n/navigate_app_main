@@ -11,7 +11,7 @@ int comparator(
 int sum(int left, int right) => left + right;
 
 var graph = WeightedDirectedGraph<Waypoint, int>({
-  // N109A: {N109B: 1},
+  n106: {n107: 1, n105: 1},
   // N109B: {N109C: 1, N109A: 1},
   // N109C: {N109B: 1}
 }, summation: sum, zero: 0);

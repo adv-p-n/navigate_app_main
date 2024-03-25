@@ -16,8 +16,11 @@ class Waypoint implements Comparable<Waypoint> {
 final List<Waypoint> waypoints = [
   gwt1,
   n109c,
+  n109cCor,
   n109b,
+  n109bCor,
   n109a,
+  n109aCor,
   n112d,
   n112c,
   n112b,
@@ -84,8 +87,11 @@ final List<Waypoint> waypoints = [
 
 final gwt1 = Waypoint(name: 'GWT1', posX: 85, posY: 50);
 final n109c = Waypoint(name: 'N109C', posX: 85, posY: 90);
+final n109cCor = Waypoint(name: 'N109C-C', posX: 107.5, posY: 90);
 final n109b = Waypoint(name: 'N109B', posX: 85, posY: 120);
+final n109bCor = Waypoint(name: 'N109B-C', posX: 107.5, posY: 120);
 final n109a = Waypoint(name: 'N109A', posX: 85, posY: 150);
+final n109aCor = Waypoint(name: 'N109A', posX: 107.5, posY: 150);
 final n112d = Waypoint(name: 'N112D', posX: 160, posY: -5);
 final n112c = Waypoint(name: 'N112C', posX: 160, posY: 5);
 final n112b = Waypoint(name: 'N112B', posX: 160, posY: 20);
