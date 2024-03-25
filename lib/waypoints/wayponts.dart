@@ -84,5 +84,5 @@ final List<Waypoint> waypoints = [
   Waypoint(name: 'STAIR_MR1', posX: 290, posY: 260),
   Waypoint(name: 'STAIR_LL1', posX: 160, posY: 375),
   Waypoint(name: 'STAIR_LR1', posX: 250, posY: 374),
-  // Add more waypoints as needed
+  
 ];
