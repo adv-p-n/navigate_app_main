@@ -79,7 +79,7 @@ final List<Waypoint> waypoints = [
   s113,
   stairTM1,
   stairMM1,
-  staurLM1,
+  stairLM1,
   stairTL1,
   stairML1,
   stairMR1,
@@ -125,6 +125,7 @@ final List<Waypoint> waypoints = [
   s106Cor,
   csesrCor,
   s103aCor,
+  s103bCor,
   s102bCor,
   s102aCor,
   s101bCor,
@@ -137,7 +138,7 @@ final List<Waypoint> waypoints = [
   a103Cor,
   stairTM1Cor,
   stairMM1Cor,
-  staurLM1Cor,
+  stairLM1Cor,
   stairTL1Cor,
   stairML1Cor,
   stairMR1Cor,
@@ -340,8 +341,8 @@ final stairTM1Cor = Waypoint(name: 'STAIR_TM1-C', posX: 200, posY: 60);
 final stairMM1 = Waypoint(name: 'STAIR_MM1', posX: 200, posY: 155);
 final stairMM1Cor = Waypoint(name: 'STAIR_MM1-C', posX: 200, posY: 160);
 
-final staurLM1 = Waypoint(name: 'STAUR_LM1', posX: 200, posY: 250);
-final staurLM1Cor = Waypoint(name: 'STAUR_LM1-C', posX: 200, posY: 255);
+final stairLM1 = Waypoint(name: 'STAUR_LM1', posX: 200, posY: 250);
+final stairLM1Cor = Waypoint(name: 'STAUR_LM1-C', posX: 200, posY: 255);
 
 final stairTL1 = Waypoint(name: 'STAIR_TL1', posX: 126, posY: 115);
 final stairTL1Cor = Waypoint(name: 'STAIR_TL1-C', posX: 125, posY: 106);
@@ -364,10 +365,10 @@ final junction4 = Waypoint(name: 'junction4', posX: 180, posY: 250);
 final junction5 = Waypoint(name: 'junction5', posX: 180, posY: 391);
 final junction6 = Waypoint(name: 'junction6', posX: 236, posY: 60);
 final junction7 = Waypoint(name: 'junction7', posX: 236, posY: 106);
-final junction8 = Waypoint(name: 'junction8', posX: 236, posY: 155);
+final junction8 = Waypoint(name: 'junction8', posX: 236, posY: 160);
 final junction9 = Waypoint(name: 'junction9', posX: 236, posY: 250);
 final junction10 = Waypoint(name: 'junction10', posX: 236, posY: 391);
 final junction12 = Waypoint(name: 'junction12', posX: 102, posY: 255);
-final junction13 = Waypoint(name: 'junction14', posX: 301, posY: 255);
-final junction11 = Waypoint(name: 'junction14', posX: 107.5, posY: 106);
+final junction13 = Waypoint(name: 'junction13', posX: 301, posY: 255);
+final junction11 = Waypoint(name: 'junction11', posX: 107.5, posY: 106);
 final junction14 = Waypoint(name: 'junction14', posX: 305, posY: 106);
