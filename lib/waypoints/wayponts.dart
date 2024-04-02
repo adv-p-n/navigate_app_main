@@ -27,7 +27,7 @@ final List<Waypoint> waypoints = [
   n112cCor,
   n112b,
   n112a,
-  n111e,
+  n111b,
   n111a,
   n110,
   n108,
@@ -87,7 +87,7 @@ final List<Waypoint> waypoints = [
   stairLR1,
   n112bCor,
   n112aCor,
-  n111eCor,
+  n111bCor,
   n111aCor,
   n110Cor,
   n108Cor,
@@ -125,7 +125,6 @@ final List<Waypoint> waypoints = [
   s106Cor,
   csesrCor,
   s103aCor,
-  s103bCor,
   s102bCor,
   s102aCor,
   s101bCor,
@@ -158,6 +157,7 @@ final List<Waypoint> waypoints = [
   junction13,
   junction11,
   junction14,
+  s103bCor,
 ];
 
 final gwt1 = Waypoint(name: 'GWT1', posX: 85, posY: 50);
@@ -182,8 +182,8 @@ final n112bCor = Waypoint(name: 'N112B-C', posX: 180, posY: 20);
 final n112a = Waypoint(name: 'N112A', posX: 160, posY: 35);
 final n112aCor = Waypoint(name: 'N112A-C', posX: 180, posY: 35);
 
-final n111e = Waypoint(name: 'N111E', posX: 160, posY: 45);
-final n111eCor = Waypoint(name: 'N111E-C', posX: 180, posY: 45);
+final n111b = Waypoint(name: 'N111E', posX: 160, posY: 45);
+final n111bCor = Waypoint(name: 'N111E-C', posX: 180, posY: 45);
 
 final n111a = Waypoint(name: 'N111A', posX: 160, posY: 50);
 final n111aCor = Waypoint(name: 'N111A-C', posX: 180, posY: 50);
@@ -360,7 +360,7 @@ final stairLR1 = Waypoint(name: 'STAIR_LR1', posX: 250, posY: 374);
 final stairLR1Cor = Waypoint(name: 'STAIR_LR1-C', posX: 250, posY: 391);
 final junction1 = Waypoint(name: 'junction1', posX: 180, posY: 60);
 final junction2 = Waypoint(name: 'junction2', posX: 180, posY: 106);
-final junction3 = Waypoint(name: 'junction3', posX: 180, posY: 155);
+final junction3 = Waypoint(name: 'junction3', posX: 180, posY: 160);
 final junction4 = Waypoint(name: 'junction4', posX: 180, posY: 250);
 final junction5 = Waypoint(name: 'junction5', posX: 180, posY: 391);
 final junction6 = Waypoint(name: 'junction6', posX: 236, posY: 60);
