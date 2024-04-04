@@ -75,7 +75,7 @@ var graph = WeightedDirectedGraph<Waypoint, int>({
   a103: {a103Cor: 1},
   // s113,
   stairTM1: {stairTM1Cor: 1},
-  stairMM1: {stairMM1Cor: 1},
+  stairMM1: {stairMM1Cor: 1, stairMM2: 1},
   stairLM1: {stairLM1Cor: 1},
   stairTL1: {stairTL1Cor: 1},
   stairML1: {stairML1Cor: 1},
@@ -165,4 +165,13 @@ var graph = WeightedDirectedGraph<Waypoint, int>({
   junction13: {stairMR1Cor: 1, s104abCor: 1, s104cCor: 1},
   junction11: {n109cCor: 1, n109bCor: 1, stairTL1Cor: 1},
   junction14: {s109dCor: 1, s109cCor: 1, junction7: 1},
+
+  //floor2
+  stairMM2: {stairMM2Cor: 1, stairMM3: 1, stairMM1: 1},
+
+  //floor3
+  stairMM3: {stairMM3Cor: 1, stairMM2: 1},
+  stairMM3Cor: {stairMM3: 1, s307Cor: 1},
+  s307Cor: {s307: 1, stairMM3Cor: 1},
+  s307: {s307Cor: 1}
 }, summation: sum, zero: 0);
