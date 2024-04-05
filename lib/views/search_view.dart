@@ -72,41 +72,22 @@ class SearchPageState extends State<SearchPage> {
                   dev.log(_endController.text);
                   dev.log(_startController.text);
 
-                  for (List<Waypoint> floor in waypoints) {
-                    startWaypoint = floor.firstWhere(
-                        (waypoint) => waypoint.name == _startController.text,
-                        orElse: () =>
-                            waypointNotFound); // Set startWaypoint to null if not found
-                    if (startWaypoint != waypointNotFound) {
-                      // If startWaypoint is found, exit the loop
-                      break;
-                    }
+                  startWaypoint = waypoints.firstWhere(
+                      (waypoint) =>
+                          waypoint.name == _startController.text.toUpperCase(),
+                      orElse: () =>
+                          waypointNotFound); // Set startWaypoint to null if not found
+
+                  endWaypoint = waypoints.firstWhere(
+                      (waypoint) =>
+                          waypoint.name == _endController.text.toUpperCase(),
+                      orElse: () =>
+                          waypointNotFound); // Set endWaypoint to null if not found
+
+                  if (startWaypoint == waypointNotFound ||
+                      endWaypoint == waypointNotFound) {
+                    throw StateError('Start or End Waypoint Not Found');
                   }
-
-                  if (startWaypoint == null) {
-                    // Handle case where startWaypoint is not found
-                    throw StateError('Start waypoint not found');
-                  }
-
-// Now that startWaypoint is found, find the endWaypoint in a similar way
-
-                  for (List<Waypoint> floor in waypoints) {
-                    endWaypoint = floor.firstWhere(
-                        (waypoint) => waypoint.name == _endController.text,
-                        orElse: () =>
-                            waypointNotFound); // Set endWaypoint to null if not found
-                    if (endWaypoint != waypointNotFound) {
-                      // If endWaypoint is found, exit the loop
-                      break;
-                    }
-                  }
-
-                  if (endWaypoint == null) {
-                    // Handle case where endWaypoint is not found
-                    throw StateError('End waypoint not found');
-                  }
-
-// Proceed with the rest of your logic
 
                   // Return selected waypoints to the previous page
                   Navigator.pop(

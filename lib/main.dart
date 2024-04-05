@@ -1,7 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:navigate_app_main/Graph/f2_graph.dart';
+import 'package:navigate_app_main/Utils/build_Dotted_Path.dart';
 import 'package:navigate_app_main/views/search_view.dart';
 import 'package:navigate_app_main/waypoints/wayponts.dart';
 import 'dart:developer' as dev show log;
@@ -104,25 +103,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 fit: BoxFit.fill,
               ),
 
-              //_buildDottedPath(path),
+              buildDottedPath(path, selectedFloorIndex + 1),
 
-              //TO DISPALY ALL WAYPOINTS
-              for (var waypoint in path)
-                Positioned(
-                  left: waypoint.posX + 5,
-                  top: waypoint.posY + 10,
-                  child: GestureDetector(
-                    onTap: () {
-                      // Handle waypoint tap
-                      print('Waypoint ${waypoint.name} tapped');
-                    },
-                    child: const Icon(
-                      Icons.location_on,
-                      color: Colors.red,
-                      size: 15,
-                    ),
-                  ),
-                ),
+              // //TO DISPALY ALL WAYPOINTS
+              // for (var waypoint in path)
+              //   if (waypoint.floor == selectedFloorIndex + 1)
+              //     Positioned(
+              //       left: waypoint.posX + 5,
+              //       top: waypoint.posY + 10,
+              //       child: GestureDetector(
+              //         onTap: () {
+              //           // Handle waypoint tap
+              //           print('Waypoint ${waypoint.name} tapped');
+              //         },
+              //         child: const Icon(
+              //           Icons.location_on,
+              //           color: Colors.red,
+              //           size: 15,
+              //         ),
+              //       ),
+              //     ),
             ],
           ),
         ),
@@ -168,49 +168,5 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.layers),
       ),
     );
-  }
-
-  Widget _buildDottedPath(List<Waypoint> path) {
-    List<Widget> dottedLines = [];
-
-    for (int i = 0; i < path.length - 1; i++) {
-      double startX = path[i].posX;
-      double startY = path[i].posY;
-      double endX = path[i + 1].posX;
-      double endY = path[i + 1].posY;
-
-      // Calculate distance between waypoints
-      double distance = sqrt(pow(endX - startX, 2) + pow(endY - startY, 2));
-
-      // Calculate number of dots for the path based on distance
-      int numberOfDots =
-          (distance / 5).ceil(); // Adjust size of each dot as needed
-
-      // Calculate step size for each dot
-      double stepX = (endX - startX) / numberOfDots;
-      double stepY = (endY - startY) / numberOfDots;
-
-      // Add dots to the path
-      for (int j = 0; j < numberOfDots; j++) {
-        double x = startX + stepX * j;
-        double y = startY + stepY * j;
-        dottedLines.add(
-          Positioned(
-            left: x + 11,
-            top: y + 20,
-            child: Container(
-              width: 2,
-              height: 2,
-              decoration: const BoxDecoration(
-                color: Colors.red,
-                shape: BoxShape.circle,
-              ),
-            ),
-          ),
-        );
-      }
-    }
-
-    return Stack(children: dottedLines);
   }
 }
