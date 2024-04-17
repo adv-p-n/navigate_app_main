@@ -39,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int selectedFloorIndex = 0;
   List<String> floorImages = [
+    'assets/Images/floor0_amr.png',
     'assets/Images/floor1_amr.png',
     'assets/Images/floor2_amr.png',
     'assets/Images/floor3_amr.png',
@@ -105,24 +106,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
               buildDottedPath(path, selectedFloorIndex + 1),
 
-              // //TO DISPALY ALL WAYPOINTS
-              // for (var waypoint in path)
-              //   if (waypoint.floor == selectedFloorIndex + 1)
-              //     Positioned(
-              //       left: waypoint.posX + 5,
-              //       top: waypoint.posY + 10,
-              //       child: GestureDetector(
-              //         onTap: () {
-              //           // Handle waypoint tap
-              //           print('Waypoint ${waypoint.name} tapped');
-              //         },
-              //         child: const Icon(
-              //           Icons.location_on,
-              //           color: Colors.red,
-              //           size: 15,
-              //         ),
-              //       ),
-              //     ),
+              //TO DISPALY ALL WAYPOINTS
+              for (var waypoint in waypoints)
+                if (waypoint.floor == selectedFloorIndex)
+                  Positioned(
+                    left: waypoint.posX + 5,
+                    top: waypoint.posY + 10,
+                    child: GestureDetector(
+                      onTap: () {
+                        // Handle waypoint tap
+                        print('Waypoint ${waypoint.name} tapped');
+                      },
+                      child: const Icon(
+                        Icons.location_on,
+                        color: Colors.red,
+                        size: 15,
+                      ),
+                    ),
+                  ),
             ],
           ),
         ),
@@ -153,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'Floor ${index + 1}',
+                            'Floor ${index}',
                             style: const TextStyle(fontSize: 16),
                           ),
                         ),
