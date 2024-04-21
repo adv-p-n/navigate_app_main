@@ -183,10 +183,14 @@ final List<Waypoint> waypoints = [
   stairMM2,
   stairMM2Cor,
   gwt2,
-  n209e, n209eCor,
-  n209d, n209dCor,
-  n209c, n209cCor,
-  n209b, n209bCor,
+  n209e, 
+  n209eCor,
+  n209d, 
+  n209dCor,
+  n209c, 
+  n209cCor,
+  n209b, 
+  n209bCor,
   n209a, n209aCor,
   stairTL2, stairTL2Cor,
   n211c, n211cCor,
@@ -542,8 +546,8 @@ final stairTL2 = Waypoint(name: 'STAIR_TL2', posX: 126, posY: 110, floor: 2);
 final stairTL2Cor =
     Waypoint(name: 'STAIR_TL2-C', posX: 125, posY: 95, floor: 2);
 
-final n211c = Waypoint(name: 'N211a', posX: 160, posY: -5, floor: 2);
-final n211cCor = Waypoint(name: 'N211a-C', posX: 180, posY: -5, floor: 2);
+final n211c = Waypoint(name: 'N211c', posX: 160, posY: -5, floor: 2);
+final n211cCor = Waypoint(name: 'N211c-C', posX: 180, posY: -5, floor: 2);
 
 final n211b = Waypoint(name: 'N211b', posX: 160, posY: 20, floor: 2);
 final n211bCor = Waypoint(name: 'N211b-C', posX: 180, posY: 20, floor: 2);
@@ -569,9 +573,9 @@ final n205bCor = Waypoint(name: 'N205b-C', posX: 180, posY: 215, floor: 2);
 final n205a = Waypoint(name: 'N205c', posX: 160, posY: 225, floor: 2);
 final n205aCor = Waypoint(name: 'N205c-C', posX: 180, posY: 225, floor: 2);
 
-final stairLM2 = Waypoint(name: 'STAUR_LM2', posX: 200, posY: 230, floor: 2);
+final stairLM2 = Waypoint(name: 'STAIR_LM2', posX: 200, posY: 230, floor: 2);
 final stairLM2Cor =
-    Waypoint(name: 'STAUR_LM2-C', posX: 200, posY: 240, floor: 2);
+    Waypoint(name: 'STAIR_LM2-C', posX: 200, posY: 240, floor: 2);
 
 final n203 = Waypoint(name: 'N203', posX: 160, posY: 270, floor: 2);
 final n203Cor = Waypoint(name: 'N203-C', posX: 180, posY: 270, floor: 2);
@@ -704,7 +708,7 @@ final a204cirCor = Waypoint(name: 'A204CIR-C', posX: 200, posY: 371, floor: 2);
 final a202tcc = Waypoint(name: 'A202TCC', posX: 270, posY: 400, floor: 2);
 final a202tccCor = Waypoint(name: 'A202TCC-C', posX: 271, posY: 371, floor: 2);
 
-final a203 = Waypoint(name: 'A205', posX: 251, posY: 401, floor: 2);
+final a203 = Waypoint(name: 'A203', posX: 251, posY: 401, floor: 2);
 
 final junction1l2 =
     Waypoint(name: 'junction1l2', posX: 180, posY: 55, floor: 2);
