@@ -3,7 +3,13 @@ import 'package:navigate_app_main/Graph/f2_graph.dart';
 import 'package:navigate_app_main/Utils/build_Dotted_Path.dart';
 import 'package:navigate_app_main/views/search_view.dart';
 import 'package:navigate_app_main/waypoints/wayponts.dart';
+import 'package:navigate_app_main/Utils/error_dialog_builder.dart';
+import 'package:navigate_app_main/wifi/wifi_mac_addresses.dart';
+import 'package:navigate_app_main/wifi/wifi_scanner.dart';
+import 'package:wifi_scan/wifi_scan.dart';
 import 'dart:developer' as dev show log;
+
+//import 'package:navigate_app_main/wifi/wifi_scanner.dart';
 
 void main() {
   runApp(const MyApp());
@@ -68,8 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
     String selectedFloorImage = floorImages[selectedFloorIndex];
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
-        backgroundColor: Colors.amber,
+        title: const Text("Navigate"),
+        backgroundColor: Colors.blueGrey[200],
         actions: [
           IconButton(
             onPressed: () async {
@@ -89,6 +95,19 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             icon: const Icon(Icons.search),
           ),
+          IconButton(
+              onPressed: () async {
+                //await _addSelectedWifiToTable();
+                try {
+                  String prediction = await getRoom();
+                  dev.log(prediction);
+                  // Do something with the prediction
+                } catch (e) {
+                  print('Error: $e');
+                  // Handle the error gracefully
+                }
+              },
+              icon: const Icon(Icons.smart_button_rounded))
         ],
       ),
       body: Center(
@@ -169,5 +188,114 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.layers),
       ),
     );
+  }
+
+  List<WiFiAccessPoint> accessPoints = <WiFiAccessPoint>[];
+  List<WiFiAccessPoint> selectedAccessPoints = [];
+  List<Map<String, dynamic>> rowData = [];
+  List<String> macIdInTable = finalMac;
+  bool shouldCheckCan = true;
+
+  Future<void> startScan(BuildContext context) async {
+    if (shouldCheckCan) {
+      final can = await WiFiScan.instance.canStartScan();
+      // if can-not, then show error
+      if (can != CanStartScan.yes) {
+        return;
+      }
+    }
+
+    // call startScan API
+    await WiFiScan.instance.startScan();
+    // reset access points.
+    setState(() => accessPoints = <WiFiAccessPoint>[]);
+    await _getScannedResults(context);
+  }
+
+  Future<bool> _canGetScannedResults(BuildContext context) async {
+    if (shouldCheckCan) {
+      // check if can-getScannedResults
+      final can = await WiFiScan.instance.canGetScannedResults();
+      // if can-not, then show error
+      if (can != CanGetScannedResults.yes) {
+        //if (mounted) kShowSnackBar(context, "Cannot get scanned results: $can");
+        accessPoints = <WiFiAccessPoint>[];
+        return false;
+      }
+    }
+    return true;
+  }
+
+  Future<void> _getScannedResults(BuildContext context) async {
+    //Fluttertoast.showToast(msg: 'Getting Scan results');
+    if (await _canGetScannedResults(context)) {
+      // get scanned results
+      final results = await WiFiScan.instance.getScannedResults();
+      setState(() {
+        accessPoints = results;
+      });
+      //_addSelectedWifiToTable();
+
+      //Fluttertoast.showToast(msg: 'Result Updated and added to table');
+    }
+  }
+
+  Future<void> _addSelectedWifiToTable() async {
+    // Clear the previous tempMacVals
+    await startScan(context);
+    dev.log('selectedAccessPoints : $selectedAccessPoints');
+
+    // Map to store aggregated signal levels for each MAC address
+    Map<String, int> aggregatedSignalLevels = {};
+    for (WiFiAccessPoint wifi in accessPoints) {
+      if (wifi.ssid == "Tenda_DAE618") {
+        selectedAccessPoints.add(wifi);
+      }
+    }
+
+    for (WiFiAccessPoint selctaccessPoint in selectedAccessPoints) {
+      // Aggregate signal levels for each MAC address
+      aggregatedSignalLevels.update(
+        selctaccessPoint.bssid,
+        (level) => level + selctaccessPoint.level,
+        ifAbsent: () => selctaccessPoint.level,
+      );
+
+      // Add MAC address to macIdInTable if it's not already present
+      if (!macIdInTable.contains(selctaccessPoint.bssid)) {
+        showGenericDialog(
+          context: context,
+          content: ('Mac Id not recognised'),
+          title: ("An Error Occured"),
+          optionsBuilder: () => {
+            'OK': Navigator.pop,
+          },
+        );
+      }
+    }
+
+    // // Convert aggregated signal levels to the required format
+    // rowData.addAll(
+    //   aggregatedSignalLevels.entries.map((entry) => {
+    //         entry.key: entry.value,
+    //       }),
+    // );
+  }
+
+  Future<String> getRoom() async {
+    rowData = [
+      {"c6:74:ad:78:62:4d": -49},
+      {"c6:74:ad:78:61:55": -56},
+      {"c6:74:ad:78:61:11": -63},
+      {"c8:a6:08:58:cd:28": -78},
+      {"c6:74:ad:78:62:01": -58},
+      {"c6:74:ad:78:59:35": -74}
+    ];
+    String room = await sendDataToBackend(rowData);
+    dev.log("Room: $room");
+    //dev.log('tempMacVals : $tempMacVals');
+
+    dev.log('rowData: $rowData');
+    return room;
   }
 }
