@@ -315,7 +315,18 @@ final List<Waypoint> waypoints = [
   gwt0, n009d, n009dCor, n009c, n009cCor,
   junction11l0, n009b, n009bCor, n009a, n009aCor, stairTL0, stairTL0Cor, gwm0,
   gwm0Cor, n004b, n004bCor, n004c, n004cCor, parcelscouriers,
-  parcelscouriersCor, n004e, n004eCor, n004g, n004gCor,
+  parcelscouriersCor, n004e, n004eCor, n004g, n004gCor, n004a, n004aCor,
+  lwt0, lwt0Cor, s009c, s009cCor, s009b, s009bCor,
+  mechanicalworkshop, mechanicalworkshopCor, lwm0, lwm0Cor,
+  s004c, s004cCor, s004b, s004bCor,
+  s003, s003Cor, a007, a007Cor,
+  a006, a006Cor, a005, a005Cor,
+  a003, a003Cor, a002, a002Cor, lwl0, lwl0Cor, a001, a001Cor,
+  stairTM0, stairTM0Cor, stairMM0, stairMM0Cor, stairLM0, stairLM0Cor, stairML0,
+  stairML0Cor,
+  stairLR0, stairLR0Cor, stairLL0, stairLL0Cor, junction7l0, junction6l0,
+  junction12l0, junction4l0, junction9l0, junction5l0, junction10l0,
+  stairMR0, stairMR0Cor,
 ];
 final gwt1 = Waypoint(name: 'GWT1', posX: 85, posY: 50, floor: 1);
 final n109c = Waypoint(name: 'N109C', posX: 85, posY: 90, floor: 1);
@@ -638,7 +649,7 @@ final s205a = Waypoint(name: 'S205A', posX: 250, posY: 225, floor: 2);
 final s205aCor = Waypoint(name: 'S205A-c', posX: 230, posY: 225, floor: 2);
 
 final s203 = Waypoint(name: 'S203', posX: 250, posY: 266, floor: 2);
-final s203Cor = Waypoint(name: 'S103-C', posX: 230, posY: 266, floor: 2);
+final s203Cor = Waypoint(name: 'S203-C', posX: 230, posY: 266, floor: 2);
 
 final s202 = Waypoint(name: 'S202', posX: 250, posY: 285, floor: 2);
 final s202Cor = Waypoint(name: 'S202-C', posX: 230, posY: 285, floor: 2);
@@ -1119,8 +1130,97 @@ final n004eCor = Waypoint(name: 'N004E-C', posX: 70, posY: 225, floor: 0);
 final n004g = Waypoint(name: 'N004G', posX: 90, posY: 200, floor: 0);
 final n004gCor = Waypoint(name: 'N004G-C', posX: 90, posY: 225, floor: 0);
 
-final n004a = Waypoint(name: 'N004A', posX: 90, posY: 200, floor: 0);
-final n004aCor = Waypoint(name: 'N004A-C', posX: 90, posY: 225, floor: 0);
+final n004a = Waypoint(name: 'N004A', posX: 97, posY: 260, floor: 0);
+final n004aCor = Waypoint(name: 'N004A-C', posX: 97, posY: 245, floor: 0);
 
+final lwt0 = Waypoint(name: 'LWT0', posX: 300, posY: 65, floor: 0);
+final lwt0Cor = Waypoint(name: 'LWT0-C', posX: 260, posY: 65, floor: 0);
+
+final s009c = Waypoint(name: 'S009C', posX: 300, posY: 85, floor: 0);
+final s009cCor = Waypoint(name: 'S009C-C', posX: 275, posY: 85, floor: 0);
+
+final s009b = Waypoint(name: 'S009B', posX: 300, posY: 110, floor: 0);
+final s009bCor = Waypoint(name: 'S009B-C', posX: 275, posY: 110, floor: 0);
+
+final mechanicalworkshop =
+    Waypoint(name: 'MECHANICALWORKSHOP', posX: 300, posY: 140, floor: 0);
+final mechanicalworkshopCor =
+    Waypoint(name: 'MECHANICALWORKSHOP-C', posX: 275, posY: 140, floor: 0);
+
+final lwm0 = Waypoint(name: 'LWM0', posX: 291, posY: 186, floor: 0);
+final lwm0Cor = Waypoint(name: 'LWM0-C', posX: 275, posY: 186, floor: 0);
+
+final s004c = Waypoint(name: 'S004C', posX: 291, posY: 205, floor: 0);
+final s004cCor = Waypoint(name: 'S004C-C', posX: 275, posY: 205, floor: 0);
+
+final s004b = Waypoint(name: 'S004B', posX: 291, posY: 230, floor: 0);
+final s004bCor = Waypoint(name: 'S004B-C', posX: 275, posY: 230, floor: 0);
+
+final s003 = Waypoint(name: 'S003', posX: 291, posY: 270, floor: 0);
+final s003Cor = Waypoint(name: 'S003-C', posX: 275, posY: 270, floor: 0);
+
+final a007 = Waypoint(name: 'A007', posX: 95, posY: 340, floor: 0);
+final a007Cor = Waypoint(name: 'A007-C', posX: 103, posY: 340, floor: 0);
+
+final a006 = Waypoint(name: 'A006', posX: 130, posY: 370, floor: 0);
+final a006Cor = Waypoint(name: 'A006-C', posX: 130, posY: 355, floor: 0);
+
+final a005 = Waypoint(name: 'A005', posX: 150, posY: 380, floor: 0);
+final a005Cor = Waypoint(name: 'A005-C', posX: 150, posY: 365, floor: 0);
+
+final a003 = Waypoint(name: 'A003', posX: 230, posY: 380, floor: 0);
+final a003Cor = Waypoint(name: 'A003-C', posX: 230, posY: 365, floor: 0);
+
+final a002 = Waypoint(name: 'A002', posX: 250, posY: 380, floor: 0);
+final a002Cor = Waypoint(name: 'A002-C', posX: 250, posY: 355, floor: 0);
+
+final lwl0 = Waypoint(name: 'LWL0', posX: 270, posY: 365, floor: 0);
+final lwl0Cor = Waypoint(name: 'LWL0-C', posX: 270, posY: 355, floor: 0);
+
+final a001 = Waypoint(name: 'A001', posX: 285, posY: 325, floor: 0);
+final a001Cor = Waypoint(name: 'A001-C', posX: 274, posY: 325, floor: 0);
+
+final stairTM0 = Waypoint(name: 'STAIR_TM0', posX: 190, posY: 55, floor: 0);
+final stairTM0Cor =
+    Waypoint(name: 'STAIR_TM0-C', posX: 190, posY: 70, floor: 0);
+
+final stairMM0 = Waypoint(name: 'STAIR_MM0', posX: 190, posY: 145, floor: 0);
+final stairMM0Cor =
+    Waypoint(name: 'STAIR_MM0-C', posX: 190, posY: 155, floor: 0);
+
+final stairLM0 = Waypoint(name: 'STAUR_LM0', posX: 190, posY: 220, floor: 0);
+final stairLM0Cor =
+    Waypoint(name: 'STAUR_LM0-C', posX: 190, posY: 235, floor: 0);
+
+final stairML0 = Waypoint(name: 'STAIR_ML0', posX: 70, posY: 235, floor: 0);
+final stairML0Cor =
+    Waypoint(name: 'STAIR_ML0-C', posX: 60, posY: 235, floor: 0);
+
+final stairLR0 = Waypoint(name: 'STAIR_LR0', posX: 230, posY: 340, floor: 0);
+final stairLR0Cor =
+    Waypoint(name: 'STAIR_LR0-C', posX: 230, posY: 360, floor: 0);
+
+final stairLL0 = Waypoint(name: 'STAIR_LL0', posX: 160, posY: 340, floor: 0);
+final stairLL0Cor =
+    Waypoint(name: 'STAIR_LL0-C', posX: 160, posY: 360, floor: 0);
+
+final stairMR0 = Waypoint(name: 'STAIR_MR0', posX: 260, posY: 247, floor: 0);
+final stairMR0Cor =
+    Waypoint(name: 'STAIR_MR0-C', posX: 260, posY: 236, floor: 0);
+
+final junction7l0 =
+    Waypoint(name: 'JUNCTION7L0', posX: 215, posY: 106, floor: 0);
+final junction6l0 =
+    Waypoint(name: 'JUNCTION6L0', posX: 215, posY: 67, floor: 0);
+final junction12l0 =
+    Waypoint(name: 'JUNCTION12L0', posX: 102, posY: 235, floor: 0);
+final junction4l0 =
+    Waypoint(name: 'JUNCTION4L0', posX: 168, posY: 235, floor: 0);
+final junction9l0 =
+    Waypoint(name: 'JUNCTION9LO', posX: 215, posY: 235, floor: 0);
+final junction5l0 =
+    Waypoint(name: 'JUNCTION5L0', posX: 168, posY: 360, floor: 0);
+final junction10l0 =
+    Waypoint(name: 'JUNCTION10L0', posX: 215, posY: 360, floor: 0);
 final waypointNotFound =
     Waypoint(name: 'Waypoint Not Found', posX: 0, posY: 0, floor: 0);
