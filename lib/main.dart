@@ -3,7 +3,15 @@ import 'package:navigate_app_main/Graph/f2_graph.dart';
 import 'package:navigate_app_main/Utils/build_Dotted_Path.dart';
 import 'package:navigate_app_main/views/search_view.dart';
 import 'package:navigate_app_main/waypoints/wayponts.dart';
+// import 'package:navigate_app_main/Utils/error_dialog_builder.dart';
+// import 'package:navigate_app_main/wifi/wifi_mac_addresses.dart';
+// import 'package:navigate_app_main/wifi/wifi_scan_backend.dart';
+// import 'package:wifi_scan/wifi_scan.dart';
 import 'dart:developer' as dev show log;
+
+import 'package:navigate_app_main/wifi/wifi_scan.dart';
+
+//import 'package:navigate_app_main/wifi/wifi_scanner.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
         useMaterial3: true,
       ),
       home: const MyHomePage(),
@@ -68,8 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
     String selectedFloorImage = floorImages[selectedFloorIndex];
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
-        backgroundColor: Colors.amber,
+        title: const Text("Navigate"),
+        backgroundColor: Colors.blueGrey[200],
         actions: [
           IconButton(
             onPressed: () async {
@@ -89,6 +97,19 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             icon: const Icon(Icons.search),
           ),
+          IconButton(
+              onPressed: () async {
+                //await _addSelectedWifiToTable();
+                try {
+                  String prediction = await getRoom(context);
+                  dev.log(prediction);
+                  // Do something with the prediction
+                } catch (e) {
+                  dev.log('Error: $e');
+                  // Handle the error gracefully
+                }
+              },
+              icon: const Icon(Icons.smart_button_rounded))
         ],
       ),
       body: Center(
@@ -104,10 +125,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 fit: BoxFit.fill,
               ),
 
-              buildDottedPath(path, selectedFloorIndex + 1),
+              buildDottedPath(path, selectedFloorIndex),
 
               //TO DISPALY ALL WAYPOINTS
-              for (var waypoint in waypoints)
+              for (var waypoint in path)
                 if (waypoint.floor == selectedFloorIndex)
                   Positioned(
                     left: waypoint.posX + 5,
@@ -115,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: GestureDetector(
                       onTap: () {
                         // Handle waypoint tap
-                        print('Waypoint ${waypoint.name} tapped');
+                        dev.log('Waypoint ${waypoint.name} tapped');
                       },
                       child: const Icon(
                         Icons.location_on,
@@ -154,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'Floor ${index}',
+                            'Floor $index',
                             style: const TextStyle(fontSize: 16),
                           ),
                         ),
