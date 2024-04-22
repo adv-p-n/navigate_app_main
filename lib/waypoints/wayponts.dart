@@ -1186,9 +1186,9 @@ final stairMM0 = Waypoint(name: 'STAIR_MM0', posX: 190, posY: 145, floor: 0);
 final stairMM0Cor =
     Waypoint(name: 'STAIR_MM0-C', posX: 190, posY: 155, floor: 0);
 
-final stairLM0 = Waypoint(name: 'STAUR_LM0', posX: 190, posY: 220, floor: 0);
+final stairLM0 = Waypoint(name: 'STAIR_LM0', posX: 190, posY: 220, floor: 0);
 final stairLM0Cor =
-    Waypoint(name: 'STAUR_LM0-C', posX: 190, posY: 235, floor: 0);
+    Waypoint(name: 'STAIR_LM0-C', posX: 190, posY: 235, floor: 0);
 
 final stairML0 = Waypoint(name: 'STAIR_ML0', posX: 70, posY: 235, floor: 0);
 final stairML0Cor =
