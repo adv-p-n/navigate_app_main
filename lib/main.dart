@@ -79,14 +79,64 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text("Navigate"),
         backgroundColor: Colors.blueGrey[200],
         actions: [
+          SearchAnchor(
+            builder: (BuildContext context, SearchController controller) {
+              return SearchBar(
+                controller: controller,
+                padding: const MaterialStatePropertyAll<EdgeInsets>(
+                    EdgeInsets.symmetric(horizontal: 16.0)),
+                constraints: const BoxConstraints(maxWidth: 250, minHeight: 35),
+                onTap: () {
+                  controller.openView();
+                },
+                onChanged: (_) {
+                  controller.openView();
+                },
+                leading: const Icon(Icons.search),
+              );
+            },
+            suggestionsBuilder:
+                (BuildContext context, SearchController controller) {
+              // Filtered list of waypoints based on user input
+              final filteredWaypoints = waypoints
+                  .where((waypoint) => waypoint.name
+                      .toLowerCase()
+                      .contains(controller.value.text.toLowerCase()))
+                  .toList();
+
+              return List<ListTile>.generate(filteredWaypoints.length,
+                  (int index) {
+                final Waypoint waypoint = filteredWaypoints[index];
+                return ListTile(
+                  title: Text(waypoint.name),
+                  onTap: () {
+                    // Set the endpoint directly to the search value
+                    setState(() {
+                      endWaypoint = waypoint;
+                    });
+                    // Close the search view
+                    controller.closeView(waypoint.name);
+                    // Close the keyboard
+                    FocusScope.of(context).unfocus();
+                    path = [];
+                    dev.log('${waypoint.name}');
+                  },
+                );
+              });
+            },
+          ),
           IconButton(
             onPressed: () async {
-              final result = await Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const SearchPage()));
+              final result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SearchPage(
+                            endWaypoint: endWaypoint,
+                          )));
               if (result != null) {
                 setState(() {
                   startWaypoint = result['start'];
-                  endWaypoint = result['end'];
+                  //endWaypoint = result['end'];
                 });
                 findShortestPath();
                 // if (path.isEmpty) dev.log("empty");
@@ -128,15 +178,15 @@ class _MyHomePageState extends State<MyHomePage> {
               buildDottedPath(path, selectedFloorIndex),
 
               //TO DISPALY ALL WAYPOINTS
-              for (var waypoint in path)
-                if (waypoint.floor == selectedFloorIndex)
+              if (endWaypoint != null || endWaypoint == waypointNotFound)
+                if (endWaypoint?.floor == selectedFloorIndex)
                   Positioned(
-                    left: waypoint.posX + 5,
-                    top: waypoint.posY + 10,
+                    left: endWaypoint!.posX + 5,
+                    top: endWaypoint!.posY + 10,
                     child: GestureDetector(
                       onTap: () {
                         // Handle waypoint tap
-                        dev.log('Waypoint ${waypoint.name} tapped');
+                        dev.log('Waypoint ${endWaypoint?.name} tapped');
                       },
                       child: const Icon(
                         Icons.location_on,
