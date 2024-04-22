@@ -12,20 +12,14 @@ class SearchPage extends StatefulWidget {
 
 class SearchPageState extends State<SearchPage> {
   Waypoint? startWaypoint = waypointNotFound;
-  //late TextEditingController _startController;
-  // late TextEditingController _endController;
 
   @override
   void initState() {
     super.initState();
-    //_startController = TextEditingController();
-    //_endController = TextEditingController();
   }
 
   @override
   void dispose() {
-    //_startController.dispose();
-    //_endController.dispose();
     super.dispose();
   }
 
@@ -84,29 +78,6 @@ class SearchPageState extends State<SearchPage> {
                 });
               },
             ),
-            // TextField(
-            //   controller: _startController,
-            //   decoration: InputDecoration(
-            //     labelText: 'Start Waypoint',
-            //     hintText: 'Enter start waypoint',
-            //     suffixIcon: IconButton(
-            //       onPressed: () => _startController.clear(),
-            //       icon: const Icon(Icons.clear),
-            //     ),
-            //   ),
-            // ),
-            // const SizedBox(height: 20),
-            // TextField(
-            //   controller: _endController,
-            //   decoration: InputDecoration(
-            //     labelText: 'End Waypoint',
-            //     hintText: 'Enter end waypoint',
-            //     suffixIcon: IconButton(
-            //       onPressed: () => _endController.clear(),
-            //       icon: const Icon(Icons.clear),
-            //     ),
-            //   ),
-            // ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
