@@ -183,10 +183,14 @@ final List<Waypoint> waypoints = [
   stairMM2,
   stairMM2Cor,
   gwt2,
-  n209e, n209eCor,
-  n209d, n209dCor,
-  n209c, n209cCor,
-  n209b, n209bCor,
+  n209e,
+  n209eCor,
+  n209d,
+  n209dCor,
+  n209c,
+  n209cCor,
+  n209b,
+  n209bCor,
   n209a, n209aCor,
   stairTL2, stairTL2Cor,
   n211c, n211cCor,
@@ -303,15 +307,15 @@ final List<Waypoint> waypoints = [
   s011shreyascomputing, s011shreyascomputingCor,
   s010b, s010bCor, s010a, s010aCor,
   associatedean, associatedeanCor,
-  principal_a_s, principal_a_sCor,
+  principalas, principalasCor,
   principalengineering, principalengineeringCor,
   s005, s005Cor, deanadmin, deanadminCor,
   deanacademics, deanacademicsCor,
   s001, s001Cor,
   gwt0, n009d, n009dCor, n009c, n009cCor,
   junction11l0, n009b, n009bCor, n009a, n009aCor, stairTL0, stairTL0Cor, gwm0,
-  gwm0Cor, n004b, n004bCor, n004c, n004cCor, parcels_couriers,
-  parcels_couriersCor, n004e, n004eCor, n004g, n004gCor,
+  gwm0Cor, n004b, n004bCor, n004c, n004cCor, parcelscouriers,
+  parcelscouriersCor, n004e, n004eCor, n004g, n004gCor,
 ];
 final gwt1 = Waypoint(name: 'GWT1', posX: 85, posY: 50, floor: 1);
 final n109c = Waypoint(name: 'N109C', posX: 85, posY: 90, floor: 1);
@@ -560,8 +564,8 @@ final stairTL2 = Waypoint(name: 'STAIR_TL2', posX: 126, posY: 110, floor: 2);
 final stairTL2Cor =
     Waypoint(name: 'STAIR_TL2-C', posX: 125, posY: 95, floor: 2);
 
-final n211c = Waypoint(name: 'N211A', posX: 160, posY: -5, floor: 2);
-final n211cCor = Waypoint(name: 'N211A-C', posX: 180, posY: -5, floor: 2);
+final n211c = Waypoint(name: 'N211c', posX: 160, posY: -5, floor: 2);
+final n211cCor = Waypoint(name: 'N211c-C', posX: 180, posY: -5, floor: 2);
 
 final n211b = Waypoint(name: 'N211B', posX: 160, posY: 20, floor: 2);
 final n211bCor = Waypoint(name: 'N211B-C', posX: 180, posY: 20, floor: 2);
@@ -587,9 +591,9 @@ final n205bCor = Waypoint(name: 'N205B-C', posX: 180, posY: 215, floor: 2);
 final n205a = Waypoint(name: 'N205C', posX: 160, posY: 225, floor: 2);
 final n205aCor = Waypoint(name: 'N205C-C', posX: 180, posY: 225, floor: 2);
 
-final stairLM2 = Waypoint(name: 'STAUR_LM2', posX: 200, posY: 230, floor: 2);
+final stairLM2 = Waypoint(name: 'STAIR_LM2', posX: 200, posY: 230, floor: 2);
 final stairLM2Cor =
-    Waypoint(name: 'STAUR_LM2-C', posX: 200, posY: 240, floor: 2);
+    Waypoint(name: 'STAIR_LM2-C', posX: 200, posY: 240, floor: 2);
 
 final n203 = Waypoint(name: 'N203', posX: 160, posY: 270, floor: 2);
 final n203Cor = Waypoint(name: 'N203-C', posX: 180, posY: 270, floor: 2);
@@ -722,7 +726,7 @@ final a204cirCor = Waypoint(name: 'A204CIR-C', posX: 200, posY: 371, floor: 2);
 final a202tcc = Waypoint(name: 'A202TCC', posX: 270, posY: 400, floor: 2);
 final a202tccCor = Waypoint(name: 'A202TCC-C', posX: 271, posY: 371, floor: 2);
 
-final a203 = Waypoint(name: 'A205', posX: 251, posY: 401, floor: 2);
+final a203 = Waypoint(name: 'A203', posX: 251, posY: 401, floor: 2);
 
 final junction1l2 =
     Waypoint(name: 'JUNCTION1L2', posX: 180, posY: 55, floor: 2);
@@ -1052,9 +1056,9 @@ final associatedean =
     Waypoint(name: 'ASSOCIATEDEAN', posX: 230, posY: 125, floor: 0);
 final associatedeanCor =
     Waypoint(name: 'ASSOCIATEDEAN-C', posX: 215, posY: 125, floor: 0);
-final principal_a_s =
+final principalas =
     Waypoint(name: 'PRINCIPAL_A_S', posX: 230, posY: 160, floor: 0);
-final principal_a_sCor =
+final principalasCor =
     Waypoint(name: 'PRINCIPAL_A_S-C', posX: 215, posY: 160, floor: 0);
 final principalengineering =
     Waypoint(name: 'PRINCIPALENGINEERING', posX: 230, posY: 190, floor: 0);
@@ -1104,10 +1108,10 @@ final n004bCor = Waypoint(name: 'n004b-C', posX: 30, posY: 260, floor: 0);
 final n004c = Waypoint(name: 'N004C', posX: 35, posY: 270, floor: 0);
 final n004cCor = Waypoint(name: 'N004C-C', posX: 30, posY: 270, floor: 0);
 
-final parcels_couriers =
-    Waypoint(name: 'PARCELS_COURIERS', posX: 30, posY: 200, floor: 0);
-final parcels_couriersCor =
-    Waypoint(name: 'PARCELS_COURIERS-C', posX: 30, posY: 225, floor: 0);
+final parcelscouriers =
+    Waypoint(name: 'PARCELS COURIERS', posX: 30, posY: 200, floor: 0);
+final parcelscouriersCor =
+    Waypoint(name: 'PARCELS COURIERS-C', posX: 30, posY: 225, floor: 0);
 
 final n004e = Waypoint(name: 'N004E', posX: 70, posY: 200, floor: 0);
 final n004eCor = Waypoint(name: 'N004E-C', posX: 70, posY: 225, floor: 0);
