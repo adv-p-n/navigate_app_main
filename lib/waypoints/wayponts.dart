@@ -183,13 +183,13 @@ final List<Waypoint> waypoints = [
   stairMM2,
   stairMM2Cor,
   gwt2,
-  n209e, 
+  n209e,
   n209eCor,
-  n209d, 
+  n209d,
   n209dCor,
-  n209c, 
+  n209c,
   n209cCor,
-  n209b, 
+  n209b,
   n209bCor,
   n209a, n209aCor,
   stairTL2, stairTL2Cor,
@@ -770,7 +770,7 @@ final n309cCor = Waypoint(name: 'N309C-C', posX: 106.5, posY: 105, floor: 3);
 final n309b = Waypoint(name: 'N309B', posX: 85, posY: 120, floor: 3);
 final n309bCor = Waypoint(name: 'N309B-C', posX: 106.5, posY: 120, floor: 3);
 
-final n309a = Waypoint(name: 'N309A', posX: 85, posY: 140, floor: 3);
+final n309a = Waypoint(name: 'N309-A', posX: 85, posY: 140, floor: 3);
 final n309aCor = Waypoint(name: 'N309A-C', posX: 106.5, posY: 141, floor: 3);
 
 final gwt3 = Waypoint(name: 'GWT3', posX: 85, posY: 50, floor: 3);

@@ -180,24 +180,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
                       buildDottedPath(path, selectedFloorIndex),
 
-                      // //TO DISPALY ALL WAYPOINTS
-                      // for (var waypoint in waypoints)
-                      //   if (waypoint.floor == selectedFloorIndex)
-                      //     Positioned(
-                      //       left: waypoint.posX,
-                      //       top: waypoint.posY,
-                      //       child: GestureDetector(
-                      //         onTap: () {
-                      //           // Handle waypoint tap
-                      //           dev.log('Waypoint ${waypoint.name} tapped');
-                      //         },
-                      //         child: const Icon(
-                      //           Icons.location_on,
-                      //           color: Colors.red,
-                      //           size: 15,
-                      //         ),
-                      //       ),
-                      //     ),
+                      //TO DISPALY ALL WAYPOINTS
+                      for (var waypoint in waypoints)
+                        if (waypoint.floor == selectedFloorIndex)
+                          Positioned(
+                            left: waypoint.posX,
+                            top: waypoint.posY,
+                            child: GestureDetector(
+                              onTap: () {
+                                // Handle waypoint tap
+                                dev.log('Waypoint ${waypoint.name} tapped');
+                              },
+                              child: const Icon(
+                                Icons.location_on,
+                                color: Colors.red,
+                                size: 15,
+                              ),
+                            ),
+                          ),
 
                       //TO DISPALY Selected(endWaypoint) WAYPOINTS
                       if (endWaypoint != null ||
@@ -230,8 +230,14 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () async {
           //await _addSelectedWifiToTable();
           try {
+            path = [];
             String prediction = await getRoom(context);
-            dev.log(prediction);
+            endWaypoint = waypoints.firstWhere(
+                (waypoint) => waypoint.name == prediction,
+                orElse: () =>
+                    waypointNotFound); // Set endWaypoint to null if not found
+            dev.log(
+                "prediction: $prediction , EndWaypoint : ${endWaypoint?.name}");
             // Do something with the prediction
           } catch (e) {
             dev.log('Error: $e');
