@@ -119,11 +119,7 @@ var graph = WeightedDirectedGraph<Waypoint, int>({
   ictsCor: {icts: 1, stairLR1Cor: 1},
   s108Cor: {s108: 1, junction7: 1, s107Cor: 1},
   s107Cor: {s107: 1, junction8: 1, s108Cor: 1, s106Cor: 1},
-  s106Cor: {
-    s106: 1,
-    junction8: 1,
-    csesrCor: 1,
-  },
+  s106Cor: {s106: 1, junction8: 1, csesrCor: 1},
   csesrCor: {csesr: 1, junction9: 1, s106Cor: 1},
   s103bCor: {s103b: 1, s103aCor: 1, junction9: 1},
   s103aCor: {s103a: 1, s103bCor: 1, s102bCor: 1},
