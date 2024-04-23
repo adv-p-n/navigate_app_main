@@ -95,12 +95,11 @@ Future<void> _addSelectedWifiToTable(BuildContext context) async {
 Future<String> getRoom(BuildContext context) async {
   _addSelectedWifiToTable(context);
   rowData = [
-    {"c6:74:ad:78:62:4d": -49},
-    {"c6:74:ad:78:61:55": -56},
-    {"c6:74:ad:78:61:11": -63},
-    {"c8:a6:08:58:cd:28": -78},
-    {"c6:74:ad:78:62:01": -58},
-    {"c6:74:ad:78:59:35": -74}
+    {"c6:74:ad:78:60:65": -79},
+    {"10:f0:68:67:14:e8": -58},
+    {"0c:f4:d5:59:9a:68": -77},
+    {"c6:74:ad:78:5f:29": -82},
+    {"84:18:3a:63:a3:78": -58}
   ];
   String room = await sendDataToBackend(rowData);
   dev.log("Room: $room");
