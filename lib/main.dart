@@ -184,8 +184,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       for (var waypoint in waypoints)
                         if (waypoint.floor == selectedFloorIndex)
                           Positioned(
-                            left: waypoint.posX,
-                            top: waypoint.posY,
+                            left: waypoint.posX+5,
+                            top: waypoint.posY+10,
                             child: GestureDetector(
                               onTap: () {
                                 // Handle waypoint tap
