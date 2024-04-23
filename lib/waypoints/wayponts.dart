@@ -1007,7 +1007,7 @@ final a307Cor = Waypoint(name: 'A307-C', posX: 110, posY: 385, floor: 3);
 //floor 0
 final prayerhall = Waypoint(name: 'PRAYERHALL', posX: 160, posY: 13, floor: 0);
 final prayerhallCor =
-    Waypoint(name: 'PRAYERHALL', posX: 167, posY: 13, floor: 0);
+    Waypoint(name: 'PRAYERHALL-C', posX: 167, posY: 13, floor: 0);
 final n011 = Waypoint(name: 'N011', posX: 160, posY: 40, floor: 0);
 final n011Cor = Waypoint(name: 'N011-C', posX: 167, posY: 40, floor: 0);
 
@@ -1048,7 +1048,7 @@ final n001Cor = Waypoint(name: 'N001-C', posX: 167, posY: 311, floor: 0);
 final shreyascomputing =
     Waypoint(name: 'SHREYASCOMPUTING', posX: 230, posY: 13, floor: 0);
 final shreyascomputingCor =
-    Waypoint(name: 'SHREYASCOMPUTING', posX: 215, posY: 13, floor: 0);
+    Waypoint(name: 'SHREYASCOMPUTING-C', posX: 215, posY: 13, floor: 0);
 final s011shreyascomputing =
     Waypoint(name: 'S011SHREYASCOMPUTING', posX: 230, posY: 40, floor: 0);
 final s011shreyascomputingCor =
