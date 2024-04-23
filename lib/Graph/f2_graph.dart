@@ -131,7 +131,8 @@ var graph = WeightedDirectedGraph<Waypoint, int>({
   a107cCor: {a107c: 1, a107dCor: 1, a107bCor: 1},
   a107aDeputyControllerOfExamCor: {
     a107aDeputyControllerOfExam: 1,
-    a106FinanceAndAccountsCor: 1
+    a106FinanceAndAccountsCor: 1,
+    a107bCor: 1
   },
   a107bCor: {a107b: 1, a107aDeputyControllerOfExamCor: 1, a107cCor: 1},
   a106FinanceAndAccountsCor: {
