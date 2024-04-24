@@ -95,7 +95,7 @@ Future<void> _addSelectedWifiToTable(BuildContext context) async {
   );
 }
 
-Future<String> getRoom(BuildContext context) async {
+Future<String> getRoom(BuildContext context, int floor) async {
   _addSelectedWifiToTable(context);
   // rowData = [
   //   {"c6:74:ad:78:60:65": -79},
@@ -104,11 +104,16 @@ Future<String> getRoom(BuildContext context) async {
   //   {"c6:74:ad:78:5f:29": -82},
   //   {"84:18:3a:63:a3:78": -58}
   // ];
+  // Create a new map entry for 'floor'
+  Map<String, dynamic> floorEntry = {'floor': floor};
+
+  // Append the 'floor' entry to rowData
+  rowData.add(floorEntry);
+  dev.log('rowData: $rowData');
   String room = await sendDataToBackend(rowData);
   dev.log("Room: $room");
   //dev.log('tempMacVals : $tempMacVals');
 
-  dev.log('rowData: $rowData');
   Fluttertoast.showToast(
       msg: "Room: $room", gravity: ToastGravity.CENTER, fontSize: 16.0);
   return room;

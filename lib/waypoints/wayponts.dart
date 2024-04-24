@@ -625,7 +625,7 @@ final s211bCor = Waypoint(name: 'S211B-C', posX: 230, posY: 15, floor: 2);
 final s211a = Waypoint(name: 'S211A', posX: 250, posY: 35, floor: 2);
 final s211aCor = Waypoint(name: 'S211A-C', posX: 230, posY: 35, floor: 2);
 
-final s210 = Waypoint(name: 'S210', posX: 250, posY: 78, floor: 2);
+final s210 = Waypoint(name: 'S210A', posX: 250, posY: 78, floor: 2);
 final s210Cor = Waypoint(name: 'S210-C', posX: 230, posY: 78, floor: 2);
 
 final s208 = Waypoint(name: 'S208', posX: 250, posY: 130, floor: 2);

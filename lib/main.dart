@@ -230,7 +230,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //await _addSelectedWifiToTable();
           try {
             path = [];
-            String prediction = await getRoom(context);
+            String prediction = await getRoom(context, selectedFloorIndex);
             endWaypoint = waypoints.firstWhere(
                 (waypoint) => waypoint.name == prediction,
                 orElse: () =>
