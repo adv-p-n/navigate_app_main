@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:navigate_app_main/Utils/error_dialog_builder.dart';
 import 'package:navigate_app_main/wifi/wifi_mac_addresses.dart';
 import 'package:navigate_app_main/wifi/wifi_scan_backend.dart';
@@ -53,15 +54,16 @@ Future<void> _getScannedResults(BuildContext context) async {
 Future<void> _addSelectedWifiToTable(BuildContext context) async {
   // Clear the previous tempMacVals
   await startScan(context);
-  dev.log('selectedAccessPoints : $selectedAccessPoints');
 
   // Map to store aggregated signal levels for each MAC address
   Map<String, int> aggregatedSignalLevels = {};
+  selectedAccessPoints = [];
   for (WiFiAccessPoint wifi in accessPoints) {
-    if (wifi.ssid == "Tenda_DAE618") {
+    if (wifi.ssid == "AMRITA-Connect-2.4GHz") {
       selectedAccessPoints.add(wifi);
     }
   }
+  dev.log('selectedAccessPoints : $selectedAccessPoints');
 
   for (WiFiAccessPoint selctaccessPoint in selectedAccessPoints) {
     // Aggregate signal levels for each MAC address
@@ -84,27 +86,30 @@ Future<void> _addSelectedWifiToTable(BuildContext context) async {
     }
   }
 
-  // // Convert aggregated signal levels to the required format
-  // rowData.addAll(
-  //   aggregatedSignalLevels.entries.map((entry) => {
-  //         entry.key: entry.value,
-  //       }),
-  // );
+  // Convert aggregated signal levels to the required format
+  rowData = [];
+  rowData.addAll(
+    aggregatedSignalLevels.entries.map((entry) => {
+          entry.key: entry.value,
+        }),
+  );
 }
 
 Future<String> getRoom(BuildContext context) async {
   _addSelectedWifiToTable(context);
-  rowData = [
-    {"c6:74:ad:78:60:65": -79},
-    {"10:f0:68:67:14:e8": -58},
-    {"0c:f4:d5:59:9a:68": -77},
-    {"c6:74:ad:78:5f:29": -82},
-    {"84:18:3a:63:a3:78": -58}
-  ];
+  // rowData = [
+  //   {"c6:74:ad:78:60:65": -79},
+  //   {"10:f0:68:67:14:e8": -58},
+  //   {"0c:f4:d5:59:9a:68": -77},
+  //   {"c6:74:ad:78:5f:29": -82},
+  //   {"84:18:3a:63:a3:78": -58}
+  // ];
   String room = await sendDataToBackend(rowData);
   dev.log("Room: $room");
   //dev.log('tempMacVals : $tempMacVals');
 
   dev.log('rowData: $rowData');
+  Fluttertoast.showToast(
+      msg: "Room: $room", gravity: ToastGravity.CENTER, fontSize: 16.0);
   return room;
 }

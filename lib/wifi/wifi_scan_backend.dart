@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 Future<String> sendDataToBackend(List<Map<String, dynamic>> tempMacVals) async {
   final response = await http.post(
-    Uri.parse('http://192.168.0.102:8080/predict'),
+    Uri.parse('http://172.20.10.6:8080/predict'),
     headers: <String, String>{
       'Content-Type': 'application/json',
     },
